@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'product.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="product-area">
+    <div class="product-card">
+        <div class="product-flex">
+            <div class="image-section">
+                <img src="{{ product.image.url }}" class="responsive-image" alt="{{ product.name }}">
+            </div>
+            <div class="details-section">
+                <div class="details-body">
+                    <h2 class="product-title">{{ product.name }}</h2>
+                    
+                    <form action="{% url 'cart_add' %}" method="post" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="{{ product.id }}">
+                        
+                        <div class="form-group">
+                           
+                            <select name="size" id="size" class="size-select" required>
+                                <option value="">-- Select Size --</option> 
+                                <option value="S">Small</option>
+                                <option value="M">Medium</option>
+                                <option value="L">Large</option>
+                                <option value="XL">Extra Large</option>
+                                <option value="XXL">Double Extra Large</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="add-to-cart-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

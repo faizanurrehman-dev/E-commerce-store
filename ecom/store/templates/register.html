@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'register.css' %}">
+{% endblock %}
+
+{% block content %}
+ 
+<div class="form-container">
+    <div class="form-row justify-content-center">
+        <div class="form-column">
+            <form method="POST" action="{% url 'register' %}">
+                <div class="form-header text-center text-white">
+                    <h1 class="form-title">Register</h1>
+                </div>
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="Enter your Username" required class="form-input">
+                </div><br>
+                
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter your Email" required class="form-input">
+                </div><br>
+                
+                <div class="form-group">
+                    <input type="password" name="password1" placeholder="Password" required class="form-input">
+                </div><br>
+                
+                <div class="form-group">
+                    <input type="password" name="password2" placeholder="Confirm Password" required class="form-input">
+                </div>
+                
+                <br>
+                <button type="submit" class="form-button">
+                    Register
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

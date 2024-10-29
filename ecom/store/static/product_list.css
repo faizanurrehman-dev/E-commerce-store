@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.product-list {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.product-item {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+}
+
+.product-form {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.product h2 {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.product p {
+    margin: 5px 0;
+}
+
+.btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.text-redd {
+    color: red;
+    margin-right: 3rem;
+}
+
+@media (max-width: 1200px) {
+    .product-item {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 800px) {
+    .product-item {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 500px) {
+    .product-item {
+        width: 100%;
+    }
+}
+
+.no-products {
+    text-align: center;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: red;
+    color: white;
+    border: 1px solid #f5c6cb;
+    border-radius: 18px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    animation: bounceIn 0.6s forwards;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.no-products p {
+    margin: 0;
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.no-products:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}

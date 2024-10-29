@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="checkout-container">
+    <h2>Contact</h2>
+   
+    
+    <form action="{% url 'checkout' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <input type="email" placeholder="Enter your Email" required class="form-input">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Enter your Number" required class="form-input">
+        </div>
+        
+        <h3>Delivery Information</h3>
+        <div class="form-group">
+            <input type="text" placeholder="First Name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Last Name" required class="form-input">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Address" required class="form-input">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="City" required class="form-input">
+        </div>
+        
+        <h3>Order Shipping Method</h3>
+        <div class="form-group">
+            <label>
+                <input type="radio" name="shipping_method" value="cod" required class="form-radio"> Cash on Delivery (COD)
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                <input type="radio" name="shipping_method" value="online_payment" class="form-radio"> Pay Online
+            </label>
+        </div>
+        
+        <h3>Payment Information</h3>
+        <div class="form-group">
+            <input type="text" placeholder="Card Number" required class="form-input">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="Expiry Date" required class="form-input">
+        </div>
+        <div class="form-group">
+            <input type="text" placeholder="CVV" required class="form-input">
+        </div>
+        <h4 class="subtotal">Subtotal Rs  :  {{ subtotal|floatformat:2 }}</h4>
+        <button type="submit" class="submit-button">Complete Order</button>
+    </form>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,198 @@
+.cart-head {
+    display: flex;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    margin-left: 4rem;
+    gap: 16.5rem;
+}
+
+.cart-head h1,
+.cart-head h2 {
+    margin: 0;
+    margin-top: 10px;
+}
+
+.cart-itemm {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    margin-left: 2rem;
+}
+
+.itemm-details {
+    display: flex;
+}
+
+.itemm-image {
+    margin-right: 155px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.itemm-image img {
+    width: 100%; 
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.itemm-image h3 {
+    text-transform: capitalize;
+    margin: 0;
+}
+
+.itemm-image h5 {
+    margin-top: 3px;
+}
+
+.itemm-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 14rem;
+}
+
+.delete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.item-price,
+.itemm-total {
+    margin: 5px 0;
+}
+
+.quantity-formm {
+    background-color: transparent;
+    border-radius: 14px;
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.quantity-formm,
+.deletee-form {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-formm button,
+.deletee-form button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.quantity-formm button:hover,
+.deletee-form button:hover {
+    background-color: red;
+}
+
+.quantity-formm button {
+    background-color: transparent;
+    color: black;
+}
+
+.remove-button {
+    background-color: #dc3545;
+}
+
+.remove-button:hover {
+    background-color: #c82333;
+}
+
+.checkout-button {
+    display: block;
+    width: 30%;
+    max-width: 200px; 
+    background-color: red;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-radius: 14px;
+    text-decoration: none;
+    margin: 20px auto; 
+    transition: background-color 0.3s;
+}
+
+.checkout-button:hover {
+    background-color: darkred;
+}
+
+.subtotal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .cart-head {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0; 
+        gap: 1rem; 
+    }
+
+    .cart-itemm {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0; 
+    }
+
+    .itemm-image {
+        margin-right: 0; 
+        margin-bottom: 1rem; 
+    }
+
+    .itemm-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .quantity-formm,
+    .deletee-form {
+        flex-direction: column; 
+    }
+
+    .checkout-button {
+        width: 80%; 
+        max-width: none; 
+    }
+
+    .subtotal {
+        margin-left: 0; 
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-head {
+        gap: 1rem; 
+    }
+
+    .itemm-image img {
+        max-width: 100%; 
+    }
+
+    .checkout-button {
+        width: 90%; 
+    }
+}

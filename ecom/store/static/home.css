@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.item-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-inline: 2rem;
+}
+
+.item-card {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+}
+
+.form-wrapper {
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 10px;
+}
+
+.item-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.item-image:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.item-name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    margin: 20px 0;
+}
+
+.item-link {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.item-link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+.details-wrapper {
+    margin: 5px 0;
+}
+
+.action-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: black;
+    color: white;
+}
+
+.price-red {
+    color: red;
+    margin-right: 3rem;
+}
+
+@media (max-width: 1200px) {
+    .item-card {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 800px) {
+    .item-card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 500px) {
+    .item-card {
+        width: 100%;
+    }
+}

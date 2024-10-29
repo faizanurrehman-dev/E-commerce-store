@@ -1,0 +1,25 @@
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-content">
+           
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link active" href="{% url 'home' %}">Home</a></li>
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Register</a></li>
+                {% endif %}
+                <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}?gender=men">Men</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'product_list' %}?gender=women">Women</a></li>
+            </ul>
+            <div class="cart">
+                <a href="{% url 'cart_summary' %}" class="btn-cart">
+                    <i class="bi-cart-fill"></i>
+                    Cart
+                    <span class="badge" id="cart_quantity">{{ cart_quantity }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

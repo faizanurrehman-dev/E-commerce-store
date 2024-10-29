@@ -1,0 +1,137 @@
+.product-flex {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.image-section {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    animation: fade-in 0.5s forwards;
+}
+
+.image-section:hover .responsive-image {
+    transform: scale(2.05);
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.image-section:hover .responsive-image {
+    transform: scale(1.05) rotate(5deg);
+}
+
+.details-section {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-title {
+    font-size: 24px;
+    margin: 0 0 15px;
+    color: black;
+}
+
+.product-title:hover {
+    color: red;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.size-select {
+    width: 18.4%;
+    padding: 9px;
+    border: 1px solid transparent;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-color: black;
+}
+
+.size-select:hover {
+    border: 1px solid #000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.add-to-cart-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    width: 150px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.1s ease;
+}
+
+.bounce-left {
+    -webkit-animation: bounce-left 1s both;
+    animation: bounce-left 1s both;
+}
+
+@-webkit-keyframes bounce-left {
+    0% { transform: translateX(-40px); opacity: 1; }
+    24% { opacity: 1; }
+    40% { transform: translateX(-20px); }
+    65% { transform: translateX(-10px); }
+    82% { transform: translateX(-6px); }
+    93% { transform: translateX(-3px); }
+    25%, 55%, 75%, 87%, 98% { transform: translateX(0px); }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+
+@keyframes bounce-left {
+    0% { transform: translateX(-40px); opacity: 1; }
+    24% { opacity: 1; }
+    40% { transform: translateX(-26px); }
+    65% { transform: translateX(-13px); }
+    82% { transform: translateX(-6.5px); }
+    93% { transform: translateX(-4px); }
+    25%, 55%, 75%, 87%, 98% { transform: translateX(0px); }
+    100% { transform: translateX(0px); opacity: 1; }
+}
+
+.add-to-cart-btn {
+    animation: bounce-left 1s both;
+}
+
+.add-to-cart-btn:hover {
+    background-color: darkred;
+}
+
+.product-title {
+    margin-bottom: 3rem;
+    text-transform: capitalize;
+}
